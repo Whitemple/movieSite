@@ -1,0 +1,43 @@
+{
+  "name": "pet_project_5_moviesite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "prod": "webpack --env production",
+    "dev": "webpack --env development",
+    "clear": "rd /s /q dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Whitemple/movieSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Whitemple/movieSite/issues"
+  },
+  "homepage": "https://github.com/Whitemple/movieSite#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss": "^8.4.23",
+    "postcss-loader": "^7.3.0",
+    "postcss-preset-env": "^8.3.2",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "source-map-loader": "^4.0.1",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  }
+}
