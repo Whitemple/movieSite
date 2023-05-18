@@ -1,31 +1,34 @@
+@mixin central-flex {
+    display: flex;
+    align-items: center;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background-color: #1a191f;
+    background-color: $main-color;
     font-family: 'OpenSans', 'sans-serif';
     max-width: 1200px;
     margin: 0 auto;
 }
 .header__content{
-    display: flex;
-    align-items: center;
+    @include central-flex();
     justify-content: space-between;
     padding: 16px;
     height: 60px;
-}
-.header__logo{
-    font-size: 32px;
-    text-decoration: none;
-    color: #ffff;
-}
-.header__search{
-    padding: 8px;
-    border: 2px solid #1a191f;
-    border-radius: 5px;
-    outline: none;
+    &__logo{
+        font-size: 32px;
+        text-decoration: none;
+        color: $main-color-text;
+    }
+    &__search{
+        padding: 8px;
+        border: 2px solid $main-color;
+        border-radius: 5px;
+        outline: none;
+    }
 }
 .movies {
     display: flex;
@@ -59,40 +62,39 @@ body{
             cursor: pointer;
         }
     }
-}
-.movie__info {
-    padding: 10px 0;
-}
-.movie__title {
-    font-size: 16px;
-    color: #ffffff;
-}
-.movie__categorie {
-    font-size: 14px;
-    color: #ffd80e;
-}
-.movie__average {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1a191f;
-    color: #ffffff;
-    font-size: 14px;
-}
-.movie__average--green {
-    border: 2px solid #008000;
-}
-.movie__average--orange {
-    border: 2px solid #ffa500;
-}
-.movie__average--red {
-    border: 2px solid #ff0000;
+    &__info {
+        padding: 10px 0;
+    }
+    &__title {
+        font-size: 16px;
+        color: $main-color-text;
+    }
+    &__categorie {
+        font-size: 14px;
+        color: $genres-color-text;
+    }
+    &__average {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        @include central-flex();
+        justify-content: center;
+        background-color: $main-color;
+        color: $main-color-text;
+        font-size: 14px;
+    }
+    &__average--green {
+        border: 2px solid #008000;
+    }
+    &__average--orange {
+        border: 2px solid $genres-color-text;
+    }
+    &__average--red {
+        border: 2px solid #ff0000;
+    }
 }
 
 // modal window
@@ -108,36 +110,35 @@ body{
     overflow: auto;
     background-color: #00000080;
     transition: 2s;
+    &__card{
+        background-color: $main-color;
+        max-width: 600px;
+        padding: 16px;
+        box-shadow:  0 20px 0 #00000080;
+        border-color: $main-color;
+        color: $main-color-text;
+        display: flex;
+        flex-direction: column;
+    }
+    &__movie-backdrop{
+        width: 300px;
+        margin: 0 auto;
+    }
+    &__movie-info{
+        margin-left: 20px;
+    }
+    &__button-close{
+        padding: 5px;
+        margin: 10px;
+        align-self: center;
+    }
+    &__movie-site{
+        color: $genres-color-text;
+    }
 }
 .modal--show{
-    display: flex;
+    @include central-flex();
     justify-content: center;
-    align-items: center;
-}
-.modal__card{
-    background-color: #1a191f;
-    max-width: 600px;
-    padding: 16px;
-    box-shadow:  0 20px 0 #00000080;
-    border-color: #1a191f;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-}
-.modal__movie-backdrop{
-    width: 300px;
-    margin: 0 auto;
-}
-.modal__movie-info{
-    margin-left: 20px;
-}
-.modal__button-close{
-    padding: 5px;
-    margin: 10px;
-    align-self: center;
-}
-.modal__movie-site{
-    color: #ffd80e;
 }
 ul li{
     padding: 5px;

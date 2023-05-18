@@ -21,6 +21,7 @@ async function getMovie(url){
     createMovieCard(responseData);
 }
 
+// Change rate color
 function madeRateColored(rate){
     if(rate >= 7) return 'green';
     else if(rate>5) return 'orange';
@@ -28,9 +29,7 @@ function madeRateColored(rate){
 }
 
 
-
 function createMovieCard(data){
-    
     data.films.forEach(movie=>{
         const movieBox = document.createElement('div');
         movieBox.classList.add('movie');
@@ -99,19 +98,18 @@ function showModal(id){
     openModal(id);
 }
 
+// Close modal window
 function closeModalWindow(){
     modalWindow.classList.remove('modal--show');
     d.classList.remove('stop-scrolling');
-}
-
+};
 window.addEventListener('click', (e) => {
     if(e.target === modalWindow){
         closeModalWindow();
     }
 });
-
 window.addEventListener('keydown', (e) => {
     if(e.code ==='Escape'){
         closeModalWindow();
     }
-})
+});
